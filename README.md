@@ -111,6 +111,10 @@ VITE_API_URL=https://tu-backend.com/api
 
 ## Pruebas de Rendimiento
 ### 1. `Prueba en Lighthouse`
+<img width="866" height="822" alt="{6E43D17C-1C89-425F-9A7B-D258C4DD4088}" src="https://github.com/user-attachments/assets/5be5021d-699b-4bdd-8912-f6e62d1d4a6a" />
+<img width="879" height="818" alt="{CC43429B-3D8B-434D-BC6A-833D8BE74878}" src="https://github.com/user-attachments/assets/939edc75-c883-4989-ad1d-4734e81a8dd5" />
 
 ### 2. `ResponsiveViewer`
+<img width="1917" height="906" alt="{212DBA55-9D73-4160-983B-2D1AD1E3C497}" src="https://github.com/user-attachments/assets/e8958dde-86b8-4222-a3cc-aac3d6621bb5" />
+<img width="1504" height="674" alt="{8E3BF89D-74AF-4308-942E-96DA7D4AF2E1}" src="https://github.com/user-attachments/assets/5e4cf393-4664-4420-b528-f118f7d8e8cb" />
 
