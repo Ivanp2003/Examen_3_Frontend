@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
+// Componente de login
 const LoginForm = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const { login, loading } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -11,48 +14,53 @@ const LoginForm = () => {
       [e.target.name]: e.target.value
     });
   };
-
+// Función para manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
     const result = await login(formData.email, formData.password);
     if (result.success) {
-      alert('Login exitoso!');
+      navigate('/dashboard');
+    } else {
+      alert(result.error || 'Error al iniciar sesión');
     }
   };
 
   const styles = {
     container: {
-      marginBottom: '24px'
+      marginBottom: '1.5rem'
     },
     title: {
-      fontSize: '18px',
+      fontSize: 'clamp(1.125rem, 3vw, 1.25rem)',
       fontWeight: '600',
-      marginBottom: '16px',
+      marginBottom: '1rem',
       color: '#374151'
     },
     form: {
       display: 'flex',
       flexDirection: 'column',
-      gap: '16px'
+      gap: '1rem'
     },
     input: {
       width: '100%',
-      padding: '8px 16px',
+      padding: '0.75rem 1rem',
       border: '1px solid #d1d5db',
-      borderRadius: '8px',
-      fontSize: '16px',
-      outline: 'none'
+      borderRadius: '0.5rem',
+      fontSize: '1rem',
+      outline: 'none',
+      transition: 'border-color 0.2s'
     },
     button: {
       width: '100%',
       backgroundColor: '#2563eb',
       color: 'white',
-      padding: '8px 16px',
-      borderRadius: '8px',
-      fontSize: '16px',
+      padding: '0.75rem 1rem',
+      borderRadius: '0.5rem',
+      fontSize: '1rem',
       cursor: 'pointer',
       border: 'none',
-      opacity: loading ? 0.5 : 1
+      opacity: loading ? 0.5 : 1,
+      transition: 'all 0.2s',
+      fontWeight: '500'
     }
   };
 
@@ -68,6 +76,7 @@ const LoginForm = () => {
           onChange={handleChange}
           style={styles.input}
           required
+          disabled={loading}
         />
         <input
           type="password"
@@ -77,6 +86,7 @@ const LoginForm = () => {
           onChange={handleChange}
           style={styles.input}
           required
+          disabled={loading}
         />
         <button
           type="submit"
