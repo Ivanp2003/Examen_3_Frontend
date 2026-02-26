@@ -126,7 +126,7 @@ const Especialidades = () => {
                     value={formulario.codigo}
                     onChange={handleChange}
                     style={styles.input}
-                    required
+                    required={true}
                   />
                 </div>
 
@@ -138,7 +138,7 @@ const Especialidades = () => {
                     value={formulario.nombre}
                     onChange={handleChange}
                     style={styles.input}
-                    required
+                    required={true}
                   />
                 </div>
 
@@ -157,7 +157,7 @@ const Especialidades = () => {
                   <button 
                     type="submit" 
                     style={styles.botonGuardar}
-                    disabled={cargando}
+                    disabled={cargando ? true : false}
                   >
                     {cargando ? 'Guardando...' : 'Guardar'}
                   </button>

@@ -176,7 +176,7 @@ const Citas = () => {
                       value={formulario.codigo}
                       onChange={handleChange}
                       style={styles.input}
-                      required
+                      required={true}
                     />
                   </div>
 
@@ -187,7 +187,7 @@ const Citas = () => {
                       value={formulario.pacienteId}
                       onChange={handleChange}
                       style={styles.input}
-                      required
+                      required={true}
                     >
                       <option value="">Seleccionar paciente...</option>
                       {pacientes.map(paciente => (
@@ -207,7 +207,7 @@ const Citas = () => {
                       value={formulario.especialidadId}
                       onChange={handleChange}
                       style={styles.input}
-                      required
+                      required={true}
                     >
                       <option value="">Seleccionar especialidad...</option>
                       {especialidades.map(especialidad => (
@@ -235,7 +235,7 @@ const Citas = () => {
                   <button 
                     type="submit" 
                     style={styles.botonGuardar}
-                    disabled={cargando}
+                    disabled={cargando ? true : false}
                   >
                     {cargando ? 'Guardando...' : 'Guardar'}
                   </button>

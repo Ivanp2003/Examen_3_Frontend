@@ -11,8 +11,8 @@ export const authService = {
             resolve({
               success: true,
               token: 'mock-jwt-token-' + Date.now(),
-              nombre: 'Admin',
-              apellido: 'User',
+              nombre: 'Andres',
+              apellido: 'Panchi',
               email: email
             });
           } else {

@@ -75,8 +75,8 @@ const LoginForm = () => {
           value={formData.email}
           onChange={handleChange}
           style={styles.input}
-          required
-          disabled={loading}
+          required={true}
+          disabled={loading ? true : false}
         />
         <input
           type="password"
@@ -85,12 +85,12 @@ const LoginForm = () => {
           value={formData.password}
           onChange={handleChange}
           style={styles.input}
-          required
-          disabled={loading}
+          required={true}
+          disabled={loading ? true : false}
         />
         <button
           type="submit"
-          disabled={loading}
+          disabled={loading ? true : false}
           style={styles.button}
         >
           {loading ? 'Cargando...' : 'Iniciar Sesión'}

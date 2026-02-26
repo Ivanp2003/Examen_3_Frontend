@@ -152,7 +152,7 @@ const Pacientes = () => {
                       value={formulario.nombre}
                       onChange={handleChange}
                       style={styles.input}
-                      required
+                      required={true}
                       autoComplete="off"
                     />
                   </div>
@@ -165,7 +165,7 @@ const Pacientes = () => {
                       value={formulario.apellido}
                       onChange={handleChange}
                       style={styles.input}
-                      required
+                      required={true}
                       autoComplete="off"
                     />
                   </div>
@@ -180,7 +180,7 @@ const Pacientes = () => {
                       value={formulario.cedula}
                       onChange={handleChange}
                       style={styles.input}
-                      required
+                      required={true}
                       autoComplete="off"
                     />
                   </div>
@@ -277,7 +277,7 @@ const Pacientes = () => {
                   <button 
                     type="submit" 
                     style={styles.botonGuardar}
-                    disabled={cargando}
+                    disabled={cargando ? true : false}
                   >
                     {cargando ? 'Guardando...' : 'Guardar'}
                   </button>

@@ -29,10 +29,11 @@ const LoginSimple = () => {
       ) {
         // Guardar en localStorage
         localStorage.setItem("token", "mock-token-" + Date.now());
-        localStorage.setItem("nombre", "Admin");
-        localStorage.setItem("apellido", "User");
+        localStorage.setItem("nombre", "Andres");
+        localStorage.setItem("apellido", "Panchi");
         localStorage.setItem("email", formData.email);
-
+        
+        console.log('Login exitoso, redirigiendo a dashboard...');
         navigate("/dashboard");
       } else {
         setError("Credenciales incorrectas");
@@ -120,8 +121,8 @@ const LoginSimple = () => {
             value={formData.email}
             onChange={handleChange}
             style={styles.input}
-            required
-            disabled={loading}
+            required={true}
+            disabled={loading ? true : false}
           />
 
           <input
@@ -131,13 +132,13 @@ const LoginSimple = () => {
             value={formData.password}
             onChange={handleChange}
             style={styles.input}
-            required
-            disabled={loading}
+            required={true}
+            disabled={loading ? true : false}
           />
 
           {error && <div style={styles.error}>{error}</div>}
 
-          <button type="submit" style={styles.button} disabled={loading}>
+          <button type="submit" style={styles.button} disabled={loading ? true : false}>
             {loading ? "Cargando..." : "Iniciar Sesión"}
           </button>
         </form>
